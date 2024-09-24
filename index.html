@@ -25,11 +25,11 @@
 
 <body class="lexend">
     <header>
-        <nav>
-            <div class="max-w-screen-xl mx-auto mt-6">
+        <nav class="">
+            <div class="w-full bg-base-100 fixed px-10 py-3 z-10">
                 <div class="navbar bg-base-100">
                     <div class="navbar-start">
-                       <a href="blog.html"><button class="btn px-8 py-3 lime text-xl text-black">Blog</button></a> 
+                        <a href="blog.html"><button class="btn px-8 py-3 lime text-xl text-black">Blog</button></a>
                     </div>
                     <div class="navbar-center">
                         <img class="w-12" src="assets/logo.png" alt=""><a class="btn btn-ghost text-xl">Donate
@@ -38,71 +38,151 @@
                     <div class="navbar-end">
                         <div class="flex space-x-2 ">
                             <img src="assets/coin.png" alt="">
-                            <p class="text-xl pr-3"> 5500 BDT </p>
+                            <p id="TotalAmount" class="text-xl pr-3"> 5500 BDT </p>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <main class="max-w-screen-xl mx-auto mt-6">
+    <main class="max-w-screen-xl mx-auto">
+        <div class="w-full h-20"></div>
         <!-- button section -->
         <section>
             <div class="w-fit lg:w-1/4 space-x-2 mx-auto my-10">
-                <button class="btn px-8 py-3 lime text-xl text-black">Donation</button>
-                <button class="btn px-8 py-3 text-xl text-black">History</button>
+                <button id="donation-button" class="btn px-8 py-3 lime text-xl text-black">Donation</button>
+                <button id="history-button" class="btn px-8 py-3 text-xl text-black">History</button>
             </div>
         </section>
         <!-- card section -->
-        <section>
+        <section id="cards-section" class="">
             <!-- card-1 start-->
-            <div class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
+            <div
+                class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
                 <div class="">
                     <img class="w-full" src="assets/noakhali.png" alt="Album" />
                 </div>
                 <div class="card-body">
-                    <span><button class="btn"><img src="assets/coin.png" alt="">0 BDT</button></span>
+                    <span class="flex items-center">
+                        <div><img src="assets/coin.png" alt=""></div>
+                        <div><button id="totalDontationNoakhali" class="btn">0 BDT</button></div>
+                    </span>
                     <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
                     <p> The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                         donation will help provide essential supplies and to those affected by this disaster. Every
                         contribution, big or small, makes difference. Please join us in supporting the relief efforts
                         and making a positive impact on the lives of those in need.</p>
-                    <input class="p-5 mb-3 rounded-lg"type="text" name="" id="" placeholder="Write Donation Amount">
-                    <button class="btn btn-primary">Donate Now</button>   
+                    <input id="noakhaliInputField" class="p-5 mb-3 rounded-lg" type="text" name="" id=""
+                        placeholder="Write Donation Amount">
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button class="btn btn-primary" onclick="my_modal_5.showModal()">Donate Now</button>
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Confirmation</h3>
+                            <p class="py-4">Do you confirm Your Donation? If yes then press Yes. If No then Press ESC
+                                key or click the button below to close </p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button id="noakhaliInputbutton" class="btn">Yes</button>
+                                    <button class="btn">Close</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
                 </div>
             </div>
             <!-- card-1 end-->
             <!-- card-2 -->
-            <div class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
+            <div
+                class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
                 <div class="">
                     <img class="w-full" src="assets/feni.png" alt="Album" />
                 </div>
                 <div class="card-body">
-                    <span><button class="btn"><img src="assets/coin.png" alt="">0 BDT</button></span>
+                    <span class="flex items-center">
+                        <div><img src="assets/coin.png" alt=""></div>
+                        <div><button id="totalDontationFeni" class="btn">0 BDT</button></div>
+                    </span>
                     <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
-                    <p> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                    <input class="p-5 mb-3 rounded-lg"type="text" name="" id="" placeholder="Write Donation Amount">
-                    <button class="btn btn-primary">Donate Now</button>   
+                    <p> The recent floods in Feni have devastated local communities, leading to severe disruption and
+                        loss. Your generous donation will help provide immediate aid, including food, clean water, and
+                        medical supplies, to those affected by this calamity. Together, we can offer crucial support and
+                        help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a
+                        real difference. Please consider donating today to assist those in urgent need.</p>
+                    <input id="feniInputField" class="p-5 mb-3 rounded-lg" type="text" name="" id=""
+                        placeholder="Write Donation Amount">
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button class="btn btn-primary" onclick="Feni_donate.showModal()">Donate Now</button>
+                    <dialog id="Feni_donate" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Confirmation!</h3>
+                            <p class="py-4">Do you confirm Your Donation? If yes then press Yes. If No then Press ESC
+                                key or click the button below to close</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button id="feniInputbutton" class="btn">Yes</button>
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+
                 </div>
             </div>
             <!-- card-2 end-->
             <!-- card-3 -->
-            <div class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
+            <div
+                class="card lg:card-side bg-base-100 shadow-xl p-8 grid grid-cols-1 lg:grid-cols-2 border-2 border-gray-200 mb-5">
                 <div class="">
                     <img class="w-full" src="assets/quota-protest.png" alt="Album" />
                 </div>
                 <div class="card-body">
-                    <span><button class="btn"><img src="assets/coin.png" alt="">0 BDT</button></span>
+                    <span class="flex items-center">
+                        <div><img src="assets/coin.png" alt=""></div>
+                        <div><button id="totalDontationQouta" class="btn">0 BDT</button></div>
+                    </span>
                     <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
-                    <p> TThe recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                    <input class="p-5 mb-3 rounded-lg"type="text" name="" id="" placeholder="Write Donation Amount">
-                    <button class="btn btn-primary">Donate Now</button>   
+                    <p> TThe recent Quota movement has resulted in numerous injuries and significant hardship for many
+                        individuals. Your support is crucial in providing medical assistance, rehabilitation, and
+                        necessary supplies to those affected. By contributing, you help ensure that injured individuals
+                        receive the care and support they need during this challenging time. Every donation plays a
+                        vital role in alleviating their suffering and aiding in their recovery. Please consider making a
+                        donation to support these brave individuals in their time of need.</p>
+                    <input id="QuotaInputField" class="p-5 mb-3 rounded-lg" type="text" name="" id=""
+                        placeholder="Write Donation Amount">
+                    <button class="btn btn-primary" onclick="quota_donate.showModal()">Donate Now</button>
+                    <dialog id="quota_donate" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Confirmation!</h3>
+                            <p class="py-4">Do you confirm Your Donation? If yes then press Yes. If No then Press ESC
+                                key or click the button below to close</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button id="QuotaInputButton" class="btn">Yes</button>
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+
                 </div>
             </div>
             <!-- card-3 end-->
         </section>
+        <!-- history section -->
+        <section id="history-section" class="hidden">
+
+        </section>
     </main>
-    <footer></footer>
+    <!-- js files -->
+    <script src="js/utility.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/add-button.js"></script>
+
 </body>
 
 </html>
